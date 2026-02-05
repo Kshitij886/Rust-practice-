@@ -23,4 +23,5 @@ fn moving_ref() {
     // this work ? 
     // because now we are not giving ownership of that value, we are only giving refrence of that variable (reading)
     println!("{}", s1);
+    println!("helo");
 }
