@@ -3,12 +3,11 @@
 use std::collections::btree_map::Values;
 
 fn main() {
-
-    let v1 = vec![1,2,3];
+    let v1 = vec![1, 2, 3];
     // the iterators are lazy, meaning they have no effect untill you call methods that consume the iterator to use it up.
-    // for eg : in below it just defiles a new variable 
-    let v2= v1.iter();
-    // the iterator is stored in the v2 variable. 
+    // for eg : in below it just defiles a new variable
+    let v2 = v1.iter();
+    // the iterator is stored in the v2 variable.
     mutate_var();
     iter1();
 }
@@ -19,35 +18,45 @@ fn main() {
 // for i in v1 {
 // }
 
-// its same as 
+// its same as
 // let v1 =  vec![1,2,3];
 // let v1_iter = v1.iter();
 // for i in v1_iter {}
 
-// when we use first way, underthe hood rust is using iter() to iterate 
+// when we use first way, underthe hood rust is using iter() to iterate
 
-// and iter() method in rust provides a way to iterate over the elements of a collection by borrowing them. 
+// and iter() method in rust provides a way to iterate over the elements of a collection by borrowing them.
 
 // and we cannot mutate the variables sinxe we have an immutable refrence to the internal elements.
 
-// to mutate the value we have to 
+// to mutate the value we have to
 
 fn mutate_var() {
-    let mut v1 = vec![1,2,3];
+    let mut v1 = vec![1, 2, 3];
     println!("vec before mut: {:?}", v1);
     let v1_iter = v1.iter_mut();
     for i in v1_iter {
-        *i = *i+1;
+        *i = *i + 1;
     }
     println!("vec before mut: {:?}", v1);
 }
- // another way to iterate 
+// another way to iterate
 
-
- fn iter1 () {
-    let v1 = vec![1,2,3];
+fn iter1() {
+    let v1 = vec![1, 2, 3];
     let mut v1_iter = v1.iter();
     while let Some(val) = v1_iter.next() {
         println!("value : {}", val)
     }
- }
+}
+
+fn iter2() {
+    let mut v1 = vec![1, 2, 3];
+    let mut v1_iter = v1.iter_mut();
+
+    // this gives us the mutable ref of the elements of collection
+    let first_num = v1_iter.next();    
+    let second_num = v1_iter.next();
+    let third_num = v1_iter.next();
+    println!("{:?}", v1);
+}
