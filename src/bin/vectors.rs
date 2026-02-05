@@ -1,12 +1,9 @@
 #![allow(unused)]
 
 fn main() {
-    let mut vec = Vec::new();
-    vec.push(1);
-    vec.push(3);
-    vec.push(4);
+    let mut vec = vec![1,2,3,4,5,6];
     println!("{:?}", vec);
-    match even(&vec) {
+    match even_values(&vec) {
         Ok(v) => {
             println!("{:?}", v);
         }
@@ -16,7 +13,7 @@ fn main() {
     }
 }
 
-fn even(nums: &Vec<i32>) -> Result<Vec<i32>, &'static str> {
+fn even_values(nums: &Vec<i32>) -> Result<Vec<i32>, &'static str> {
     let mut evens = Vec::<i32>::new();
     for i in nums {
         if i % 2 == 0 {
