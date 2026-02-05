@@ -1,0 +1,3 @@
+you can add an external crate to your project by running 
+    cargo add crate_name
+
