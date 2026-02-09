@@ -60,3 +60,18 @@ fn iter2() {
     let third_num = v1_iter.next();
     println!("{:?}", v1);
 }
+
+//iter function 
+
+// two types 
+//  consuming adapters 
+// -> methods that call next() are consuming adapters because call them uses up the iterator.
+// iterator adapters 
+// -> methods defined on the iterator trailt that dont consume the iterator. Instead they produce different iterators by changing some aspect of the original iterator. EG: map, filter
+
+fn is_even() {
+    let mut vec1 = vec![1,2,3,4,5,6,7];
+    let vec_iter = vec1.iter();
+    let vec_iter2 = vec_iter.filter(|x| *x%2==0);
+    println!("{:?}", vec_iter2);
+}
