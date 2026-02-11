@@ -22,7 +22,13 @@ fn main() {
     };
     notify(&user);
 }
-
 fn notify(u: &impl Summary) {
     println!("{}", u.sumarize());
+}
+
+// this syntax for traits as a params is sugar bound of the trait bound
+// under the hood it gets converted to something like this :
+
+fn notify2<T: Summary>(u: T) {
+    u.sumarize();
 }
