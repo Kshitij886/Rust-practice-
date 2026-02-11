@@ -1,4 +1,4 @@
-# rust-projects
+# Rust projects
 
 Small collection of Rust example programs and exercises used for learning Rust concepts.
 
