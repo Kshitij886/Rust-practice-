@@ -18,7 +18,6 @@ fn main() {
 //             println!("hello {:?}", vec);
 //             thread::sleep(Duration::from_millis(12));
 //         });
-//         handle.join().unwrap();
 //     }
 //     println!("{}", x);
 // }
