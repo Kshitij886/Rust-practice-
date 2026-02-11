@@ -21,3 +21,16 @@ fn main() {
 // Strings are which provided by rust's standered library rather than coded into the core language,
 // its is grawable, mutable, owned and utf-8 string type.
 //
+
+// iterate string
+
+fn iter_string(name: String) -> Vec<char> {
+    let mut vec = Vec::<char>::new();
+    for c in name.chars() {
+        vec.push(c);
+    }
+
+    // yeii kura different approach
+    let mut vec2: Vec<char> = name.chars().collect();
+    return vec2;
+}
