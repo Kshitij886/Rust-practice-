@@ -2,8 +2,8 @@
 // we use slices for this
 fn main() {
     let name = String::from("KShitij khatri");
-    // let ans = first_word(&name);
-    // println!("First word is {}", ans);
+    let ans = first_word(&name);
+    println!("First word is {}", ans);
     let ans2 = first_word_slices(&name);
     println!("{}", ans2);
 }
@@ -28,3 +28,5 @@ fn first_word_slices(str: &String) -> &str {
     }
     return &str[..];
 }
+
+// slices can be applied to any collection
